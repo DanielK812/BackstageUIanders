@@ -345,7 +345,7 @@ const systemPage = (
   </EntityLayout>
 );
 
-const domainPage = (
+export const domainPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
       <Grid container spacing={3} alignItems="stretch">
@@ -376,3 +376,5 @@ export const entityPage = (
     <EntitySwitch.Case>{defaultEntityPage}</EntitySwitch.Case>
   </EntitySwitch>
 );
+
+
