@@ -37,6 +37,8 @@ import { CatalogGraphPage, EntityCatalogGraphCard } from '@backstage/plugin-cata
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { Grid } from '@material-ui/core';
+import { reweTheme } from './theme/test';
+import { UnifiedThemeProvider, themes } from '@backstage/theme';
 
 const app = createApp({
   apis,
@@ -57,7 +59,34 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
+  themes: [
+    {
+      id: 'light',
+      title: 'Light',
+      variant: 'light',
+      Provider: ({ children }) => (
+        <UnifiedThemeProvider theme={themes.light} children={children} />
+      ),
+    },
+    {
+      id: 'dark',
+      title: 'Dark',
+      variant: 'dark',
+      Provider: ({ children }) => (
+        <UnifiedThemeProvider theme={themes.dark} children={children} />
+      ),
+    },
+    {
+      id: 'rewe',
+      title: 'rewe',
+      variant: 'light',
+      Provider: ({ children }) => (
+        <UnifiedThemeProvider theme={reweTheme} children={children} />
+      ),
+    },
+  ],
 });
+
 
 const routes = (
   <FlatRoutes>

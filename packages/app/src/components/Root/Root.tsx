@@ -67,8 +67,8 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       <SidebarGroup label="Menu" icon={<MenuIcon />}>
         {/* Global nav, not org-specific */}
         <SidebarItem icon={HomeIcon} to="http://localhost:3000" text="Home" />
-        <SidebarItem icon={MuiMenuBookIcon } to="domains" text="Domains" />
-        <SidebarItem icon={MuiMenuBookIcon } to="" text="Subdomains" />
+        <SidebarItem icon={MuiMenuBookIcon } to="http://localhost:3000/catalog?filters%5Bkind%5D=domains&filters%5Buser%5D=all" text="Domains" />
+        <SidebarItem icon={MuiMenuBookIcon } to="http://localhost:3000/catalog?filters%5Bkind%5D=subdomains&filters%5Buser%5D=all" text="Subdomains" />
         <SidebarItem icon={MuiMenuBookIcon } to="" text="Services" />
         <SidebarItem icon={MuiMenuBookIcon } to="" text="Teams" />
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
