@@ -4,9 +4,6 @@ import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
   CatalogIndexPage,
-  EntityAboutCard,
-  EntityHasSystemsCard,
-  EntityLayout,
   catalogPlugin,
 } from '@backstage/plugin-catalog';
 import {
@@ -26,19 +23,23 @@ import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 import { UserSettingsPage } from '@backstage/plugin-user-settings';
 import { apis } from './apis';
-import { domainPage, entityPage } from './components/catalog/EntityPage';
+import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
 
 import { AlertDisplay, OAuthRequestDialog } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
-import { CatalogGraphPage, EntityCatalogGraphCard } from '@backstage/plugin-catalog-graph';
+import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
+<<<<<<< HEAD
 import { Grid } from '@material-ui/core';
 import { reweTheme } from './theme/test';
 import { UnifiedThemeProvider, themes } from '@backstage/theme';
+=======
+import { DomainExplorerPage, ServiceExplorerPage, SubdomainExplorerPage, TeamExplorerPage } from './explorerPages';
+>>>>>>> fba961a0358f47619d24b0b381d34423ed82e1b6
 
 const app = createApp({
   apis,
@@ -46,14 +47,12 @@ const app = createApp({
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
       viewTechDoc: techdocsPlugin.routes.docRoot,
-      createFromTemplate: scaffolderPlugin.routes.selectedTemplate,
     });
     bind(apiDocsPlugin.externalRoutes, {
       registerApi: catalogImportPlugin.routes.importPage,
     });
     bind(scaffolderPlugin.externalRoutes, {
       registerComponent: catalogImportPlugin.routes.importPage,
-      viewTechDoc: techdocsPlugin.routes.docRoot,
     });
     bind(orgPlugin.externalRoutes, {
       catalogIndex: catalogPlugin.routes.catalogIndex,
@@ -109,17 +108,15 @@ const routes = (
     </Route>
     <Route path="/create" element={<ScaffolderPage />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
+    <Route path="/domains" element={<DomainExplorerPage />} />
+    <Route path="/subdomains" element={<SubdomainExplorerPage />} />
+    <Route path="/teams" element={<TeamExplorerPage />} />
+    <Route path="/services" element={<ServiceExplorerPage />} />
     <Route
       path="/tech-radar"
       element={<TechRadarPage width={1500} height={800} />}
     />
     <Route
-      path="/domains/:namespace/:kind/:name"
-      element={<CatalogEntityPage />}
-    >
-      {entityPage}
-    </Route>
-      <Route
       path="/catalog-import"
       element={
         <RequirePermission permission={catalogEntityCreatePermission}>
@@ -144,4 +141,3 @@ export default app.createRoot(
     </AppRouter>
   </>,
 );
-
