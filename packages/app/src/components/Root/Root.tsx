@@ -1,7 +1,12 @@
 import React, { PropsWithChildren } from 'react';
 import { makeStyles } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
-import MuiMenuBookIcon from '@material-ui/icons/MenuBook';
+
+import MuiApartmentIcon from '@material-ui/icons/Apartment';
+import MuiCategoryIcon from '@material-ui/icons/Category';
+import MuiMemoryIcon from '@material-ui/icons/Memory';
+import MuiPeopleIcon from '@material-ui/icons/People';
+
 import ExtensionIcon from '@material-ui/icons/Extension';
 import MapIcon from '@material-ui/icons/MyLocation';
 import LibraryBooks from '@material-ui/icons/LibraryBooks';
@@ -66,11 +71,11 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       <SidebarDivider />
       <SidebarGroup label="Menu" icon={<MenuIcon />}>
         {/* Global nav, not org-specific */}
-        <SidebarItem icon={HomeIcon} to="http://localhost:3000" text="Home" />
-        <SidebarItem icon={MuiMenuBookIcon } to="domains" text="Domains" />
-        <SidebarItem icon={MuiMenuBookIcon } to="" text="Subdomains" />
-        <SidebarItem icon={MuiMenuBookIcon } to="" text="Services" />
-        <SidebarItem icon={MuiMenuBookIcon } to="" text="Teams" />
+        <SidebarItem icon={HomeIcon} to="catalog" text="Home" />
+        <SidebarItem icon={MuiApartmentIcon } to="domains" text="Domains" />
+        <SidebarItem icon={MuiCategoryIcon } to="subdomains" text="Subdomains" />
+        <SidebarItem icon={MuiMemoryIcon } to="services" text="Services" />
+        <SidebarItem icon={MuiPeopleIcon } to="teams" text="Teams" />
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
         <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />
