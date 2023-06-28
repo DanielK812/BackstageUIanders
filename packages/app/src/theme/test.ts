@@ -14,7 +14,6 @@ import { alpha, Theme } from '@material-ui/core/styles';
 import { AutocompleteClassKey } from '@material-ui/lab/Autocomplete';
 import { AlertClassKey } from '@material-ui/lab/Alert';
 
-// Labs types not included in overrides; https://github.com/mui/material-ui/issues/19427
 declare module '@material-ui/core/styles/overrides' {
   export interface ComponentNameToClassKey {
     MuiAlert: AlertClassKey;
@@ -30,10 +29,7 @@ Object.keys(defaultPageThemes).map(key => {
   };
 });
 
-// TODO(awanlin): Continuing to use the deprecated `createTheme` for now
-// will come back to clean this up when we have a better solution for this
 
-// eslint-disable-next-line
 const baseTheme = createTheme({
   ...createBaseThemeOptions({
     palette: {
