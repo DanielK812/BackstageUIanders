@@ -33,13 +33,11 @@ import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
-<<<<<<< HEAD
 import { Grid } from '@material-ui/core';
 import { reweTheme } from './theme/test';
 import { UnifiedThemeProvider, themes } from '@backstage/theme';
-=======
 import { DomainExplorerPage, ServiceExplorerPage, SubdomainExplorerPage, TeamExplorerPage } from './explorerPages';
->>>>>>> fba961a0358f47619d24b0b381d34423ed82e1b6
+
 
 const app = createApp({
   apis,
